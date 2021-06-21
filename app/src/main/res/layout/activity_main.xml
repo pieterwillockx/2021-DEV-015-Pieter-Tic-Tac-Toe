@@ -18,6 +18,7 @@
             android:paddingVertical="10dp"
             android:gravity="center"
             android:textSize="25dp"
+            android:textColor="@color/black"
             android:background="@drawable/border"
             tools:text="Player 1, make a move" />
     </LinearLayout>
