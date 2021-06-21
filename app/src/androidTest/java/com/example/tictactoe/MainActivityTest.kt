@@ -35,4 +35,16 @@ class MainActivityTest {
                 withText("O")
             )))
     }
+
+    @Test
+    fun should_update_text_in_current_player_when_clicked() {
+        onView(withId(R.id.current_player))
+            .check(matches(withText("Player X, make a move")))
+
+        onView(withId(R.id.cell1))
+            .perform(click())
+
+        onView(withId(R.id.current_player))
+            .check(matches(withText("Player O, make a move")))
+    }
 }
