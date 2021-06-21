@@ -47,4 +47,94 @@ class MainActivityTest {
         onView(withId(R.id.current_player))
             .check(matches(withText("Player O, make a move")))
     }
+
+    @Test
+    fun should_update_text_to_x_win_message_when_game_over() {
+        setUpXWinState()
+
+        onView(withId(R.id.game_over_message))
+            .check(matches(withText("GAME OVER\nPlayer X wins!")))
+    }
+
+    @Test
+    fun should_update_text_to_o_win_message_when_game_over() {
+        setUpOWinState()
+
+        onView(withId(R.id.game_over_message))
+            .check(matches(withText("GAME OVER\nPlayer O wins!")))
+    }
+
+    @Test
+    fun should_update_text_to_draw_message_when_game_over() {
+        setUpDrawState()
+
+        onView(withId(R.id.game_over_message))
+            .check(matches(withText("GAME OVER\nDraw!")))
+    }
+
+    private fun setUpXWinState() {
+        onView(withId(R.id.cell1)) // X
+            .perform(click())
+
+        onView(withId(R.id.cell4)) // O
+            .perform(click())
+
+        onView(withId(R.id.cell2)) // X
+            .perform(click())
+
+        onView(withId(R.id.cell5)) // O
+            .perform(click())
+
+        onView(withId(R.id.cell3)) // X
+            .perform(click())
+    }
+
+    private fun setUpOWinState() {
+        onView(withId(R.id.cell4)) // X
+            .perform(click())
+
+        onView(withId(R.id.cell1)) // O
+            .perform(click())
+
+        onView(withId(R.id.cell5)) // X
+            .perform(click())
+
+        onView(withId(R.id.cell2)) // O
+            .perform(click())
+
+        onView(withId(R.id.cell7)) // X
+            .perform(click())
+
+        onView(withId(R.id.cell3)) // O
+            .perform(click())
+    }
+
+    private fun setUpDrawState() {
+        onView(withId(R.id.cell1)) // X
+            .perform(click())
+
+        onView(withId(R.id.cell5)) // O
+            .perform(click())
+
+        onView(withId(R.id.cell2)) // X
+            .perform(click())
+
+        onView(withId(R.id.cell3)) // O
+            .perform(click())
+
+        onView(withId(R.id.cell7)) // X
+            .perform(click())
+
+        onView(withId(R.id.cell4)) // O
+            .perform(click())
+
+        onView(withId(R.id.cell6)) // X
+            .perform(click())
+
+        onView(withId(R.id.cell8)) // O
+            .perform(click())
+
+        onView(withId(R.id.cell9)) // X
+            .perform(click())
+    }
 }
