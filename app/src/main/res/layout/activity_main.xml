@@ -53,6 +53,7 @@
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
                         android:textSize="50dp"
+                        android:textColor="@color/black"
                         tools:text="O" />
 
                     <TextView
@@ -64,6 +65,7 @@
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
                         android:textSize="50dp"
+                        android:textColor="@color/black"
                         tools:text="O" />
 
                     <TextView
@@ -75,6 +77,7 @@
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
                         android:textSize="50dp"
+                        android:textColor="@color/black"
                         tools:text="X" />
                 </TableRow>
 
@@ -92,6 +95,7 @@
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
                         android:textSize="50dp"
+                        android:textColor="@color/black"
                         tools:text="X" />
 
                     <TextView
@@ -103,6 +107,7 @@
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
                         android:textSize="50dp"
+                        android:textColor="@color/black"
                         tools:text="O" />
 
                     <TextView
@@ -114,6 +119,7 @@
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
                         android:textSize="50dp"
+                        android:textColor="@color/black"
                         tools:text="O" />
 
                 </TableRow>
@@ -132,6 +138,7 @@
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
                         android:textSize="50dp"
+                        android:textColor="@color/black"
                         tools:text="X" />
 
                     <TextView
@@ -143,6 +150,7 @@
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
                         android:textSize="50dp"
+                        android:textColor="@color/black"
                         tools:text="O" />
 
                     <TextView
@@ -153,8 +161,9 @@
                         android:gravity="center"
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
-                        android:text="X"
-                        android:textSize="50dp" />
+                        android:textSize="50dp"
+                        android:textColor="@color/black"
+                        tools:text="X"/>
                 </TableRow>
 
             </TableLayout>
