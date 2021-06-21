@@ -11,6 +11,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
+import org.hamcrest.CoreMatchers.anyOf
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -29,6 +30,9 @@ class MainActivityTest {
     fun should_fill_cell_textview_when_clicked() {
         onView(withId(R.id.cell1))
             .perform(click())
-            .check(matches(withText("X")))
+            .check(matches(anyOf(
+                withText("X"),
+                withText("O")
+            )))
     }
 }
