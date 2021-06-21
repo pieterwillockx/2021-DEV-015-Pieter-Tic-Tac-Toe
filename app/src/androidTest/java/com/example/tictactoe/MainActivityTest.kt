@@ -53,7 +53,7 @@ class MainActivityTest {
         setUpXWinState()
 
         onView(withId(R.id.game_over_message))
-            .check(matches(withText("GAME OVER/nPlayer X wins!")))
+            .check(matches(withText("GAME OVER\nPlayer X wins!")))
     }
 
     @Test
@@ -61,7 +61,7 @@ class MainActivityTest {
         setUpOWinState()
 
         onView(withId(R.id.game_over_message))
-            .check(matches(withText("GAME OVER/nPlayer O wins!")))
+            .check(matches(withText("GAME OVER\nPlayer O wins!")))
     }
 
     @Test
@@ -69,7 +69,7 @@ class MainActivityTest {
         setUpDrawState()
 
         onView(withId(R.id.game_over_message))
-            .check(matches(withText("GAME OVER/nDraw!")))
+            .check(matches(withText("GAME OVER\nDraw!")))
     }
 
     private fun setUpXWinState() {
