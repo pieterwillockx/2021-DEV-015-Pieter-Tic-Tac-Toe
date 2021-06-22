@@ -4,6 +4,8 @@ import android.app.Application
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig
 
 class App : Application() {
+
+    // Override of Application class onCreate function to init the Calligraphy framework
     override fun onCreate() {
         super.onCreate()
 
