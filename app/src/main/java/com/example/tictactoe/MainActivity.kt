@@ -12,6 +12,8 @@ class MainActivity : Activity() {
 
     private var cells : ArrayList<TextView> = arrayListOf()
     private var playerTurn : Int = 0 // 0 -> X, 1 -> O
+    private var xCounter : Int = 0
+    private var oCounter : Int = 0
     private var xWins : Boolean = false
     private var oWins : Boolean = false
     private var draw : Boolean = false
@@ -42,6 +44,7 @@ class MainActivity : Activity() {
             if (checkIfGameOver()) {
                 setGameOverMessage()
                 showPlayAgainButton(true)
+                updateWinCounter()
             } else {
                 setCurrentPlayer()
             }
@@ -136,5 +139,15 @@ class MainActivity : Activity() {
             tv_game_over.text = "GAME OVER\nDraw!"
         else
             tv_game_over.text = ""
+    }
+
+    private fun updateWinCounter() {
+        if (xWins) {
+            xCounter++
+            tv_x_counter.text = "Player X: " + xCounter
+        } else if (oWins) {
+            oCounter++
+            tv_o_counter.text = "Player O: " + oCounter
+        }
     }
 }
