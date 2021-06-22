@@ -1,12 +1,15 @@
 package com.example.tictactoe
 
 import android.app.Activity
+import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.TableRow
 import android.widget.TextView
 import androidx.core.view.children
 import kotlinx.android.synthetic.main.activity_main.*
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 class MainActivity : Activity() {
 
@@ -17,6 +20,10 @@ class MainActivity : Activity() {
     private var xWins : Boolean = false
     private var oWins : Boolean = false
     private var draw : Boolean = false
+
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +39,14 @@ class MainActivity : Activity() {
             cells.forEachIndexed { index, it ->
                 when (cellValues[index]) {
                     0 -> it.text = ""
-                    1 -> it.text = "X"
-                    2 -> it.text = "O"
+                    1 -> {
+                        it.text = "X"
+                        (it as TextView).setTextColor(Color.BLUE)
+                    }
+                    2 -> {
+                        it.text = "O"
+                        (it as TextView).setTextColor(Color.RED)
+                    }
                 }
             }
 
@@ -56,9 +69,11 @@ class MainActivity : Activity() {
 
             if (playerTurn == 0) {
                 (it as TextView).text = "X"
+                (it as TextView).setTextColor(Color.BLUE)
                 playerTurn = 1
             } else if (playerTurn == 1) {
                 (it as TextView).text = "O"
+                (it as TextView).setTextColor(Color.RED)
                 playerTurn = 0
             }
 
@@ -121,10 +136,14 @@ class MainActivity : Activity() {
     }
 
     private fun setCurrentPlayer() {
-        if (playerTurn == 0)
+        if (playerTurn == 0) {
             tv_current_player.text = "Player X, make a move"
-        else if (playerTurn == 1)
+            tv_current_player.setTextColor(Color.BLUE)
+        }
+        else if (playerTurn == 1) {
             tv_current_player.text = "Player O, make a move"
+            tv_current_player.setTextColor(Color.RED)
+        }
     }
 
     private fun checkIfGameOver() : Boolean {

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CACACA"
     android:orientation="vertical">
 
     <LinearLayout
@@ -21,6 +23,7 @@
             android:textSize="25sp"
             android:textColor="@color/black"
             android:background="@drawable/border"
+            fontPath="fonts/poppins_regular.ttf"
             tools:text="Player 1, make a move" />
     </LinearLayout>
 
@@ -49,38 +52,38 @@
 
                     <TextView
                         android:id="@+id/cell1"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:background="@drawable/border"
                         android:gravity="center"
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
-                        android:textSize="50sp"
                         android:textColor="@color/black"
+                        android:textSize="50sp"
                         tools:text="O" />
 
                     <TextView
                         android:id="@+id/cell2"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:background="@drawable/border"
                         android:gravity="center"
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
-                        android:textSize="50sp"
                         android:textColor="@color/black"
+                        android:textSize="50sp"
                         tools:text="O" />
 
                     <TextView
                         android:id="@+id/cell3"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:background="@drawable/border"
                         android:gravity="center"
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
-                        android:textSize="50sp"
                         android:textColor="@color/black"
+                        android:textSize="50sp"
                         tools:text="X" />
                 </TableRow>
 
@@ -91,38 +94,38 @@
 
                     <TextView
                         android:id="@+id/cell4"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:background="@drawable/border"
                         android:gravity="center"
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
-                        android:textSize="50sp"
                         android:textColor="@color/black"
+                        android:textSize="50sp"
                         tools:text="X" />
 
                     <TextView
                         android:id="@+id/cell5"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:background="@drawable/border"
                         android:gravity="center"
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
-                        android:textSize="50sp"
                         android:textColor="@color/black"
+                        android:textSize="50sp"
                         tools:text="O" />
 
                     <TextView
                         android:id="@+id/cell6"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:background="@drawable/border"
                         android:gravity="center"
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
-                        android:textSize="50sp"
                         android:textColor="@color/black"
+                        android:textSize="50sp"
                         tools:text="O" />
 
                 </TableRow>
@@ -134,39 +137,39 @@
 
                     <TextView
                         android:id="@+id/cell7"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:background="@drawable/border"
                         android:gravity="center"
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
-                        android:textSize="50sp"
                         android:textColor="@color/black"
+                        android:textSize="50sp"
                         tools:text="X" />
 
                     <TextView
                         android:id="@+id/cell8"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:background="@drawable/border"
                         android:gravity="center"
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
-                        android:textSize="50sp"
                         android:textColor="@color/black"
+                        android:textSize="50sp"
                         tools:text="O" />
 
                     <TextView
                         android:id="@+id/cell9"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:background="@drawable/border"
                         android:gravity="center"
                         android:paddingHorizontal="30dp"
                         android:paddingVertical="10dp"
-                        android:textSize="50sp"
                         android:textColor="@color/black"
-                        tools:text="X"/>
+                        android:textSize="50sp"
+                        tools:text="X" />
                 </TableRow>
             </TableLayout>
 
@@ -176,23 +179,24 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="40dp"
-                android:textSize="25sp"
-                android:textColor="@color/black"
-                android:textAlignment="center"
                 android:lines="2"
-                tools:text="GAME OVER"/>
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                tools:text="GAME OVER" />
 
             <Button
                 android:id="@+id/btn_play_again"
+                fontPath="fonts/poppins_regular.ttf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="invisible"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:textSize="25sp"
-                android:textColor="@color/black"
+                android:text="Play again"
                 android:textAlignment="center"
-                android:text="Play again"/>
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:visibility="invisible" />
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -215,8 +219,9 @@
                 android:paddingVertical="10dp"
                 android:gravity="center"
                 android:textSize="25sp"
-                android:textColor="@color/black"
-                android:text="Player X: 0" />
+                android:textColor="#0000ff"
+                android:text="Player X: 0"
+                fontPath="fonts/poppins_regular.ttf" />
 
             <TextView
                 android:id="@+id/tv_o_counter"
@@ -226,8 +231,9 @@
                 android:paddingVertical="10dp"
                 android:gravity="center"
                 android:textSize="25sp"
-                android:textColor="@color/black"
-                android:text="Player O: 0" />
+                android:textColor="#ff0000"
+                android:text="Player O: 0"
+                fontPath="fonts/poppins_regular.ttf" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
