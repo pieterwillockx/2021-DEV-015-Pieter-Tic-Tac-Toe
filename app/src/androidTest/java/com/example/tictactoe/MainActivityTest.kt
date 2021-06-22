@@ -100,6 +100,22 @@ class MainActivityTest {
             .check(matches(not(isDisplayed())))
     }
 
+    @Test
+    fun should_update_x_win_counter_when_x_win_state_reached() {
+        setUpXWinState()
+
+        onView(withId(R.id.tv_x_counter))
+            .check(matches(withText("Player X: 1")))
+    }
+
+    @Test
+    fun should_update_o_win_counter_when_o_win_state_reached() {
+        setUpOWinState()
+
+        onView(withId(R.id.tv_o_counter))
+            .check(matches(withText("Player O: 1")))
+    }
+
     private fun setUpXWinState() {
         onView(withId(R.id.cell1)) // X
             .perform(click())
