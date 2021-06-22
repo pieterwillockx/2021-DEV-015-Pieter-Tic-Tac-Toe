@@ -192,7 +192,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text="Play again"
+                android:text="@string/play_again"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
@@ -220,7 +220,7 @@
                 android:gravity="center"
                 android:textSize="25sp"
                 android:textColor="#0000ff"
-                android:text="Player X: 0"
+                android:text="@string/player_x_counter_start"
                 fontPath="fonts/poppins_regular.ttf" />
 
             <TextView
@@ -232,7 +232,7 @@
                 android:gravity="center"
                 android:textSize="25sp"
                 android:textColor="#ff0000"
-                android:text="Player O: 0"
+                android:text="@string/player_o_counter_start"
                 fontPath="fonts/poppins_regular.ttf" />
         </LinearLayout>
     </LinearLayout>

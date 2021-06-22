@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">TicTacToe</string>
+    <string name="player_x_turn">Player X, make a move</string>
+    <string name="player_o_turn">Player O, make a move</string>
+    <string name="player_x_wins">GAME OVER\nPlayer X wins!</string>
+    <string name="player_o_wins">GAME OVER\nPlayer O wins!</string>
+    <string name="draw">GAME OVER\nDraw!</string>
+    <string name="player_x_counter">Player X: %1$d</string>
+    <string name="player_o_counter">Player O: %1$d</string>
+    <string name="play_again">Play again</string>
+    <string name="player_x_counter_start">Player X: 0</string>
+    <string name="player_o_counter_start">Player O: 0</string>
 </resources>
