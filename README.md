@@ -10,6 +10,7 @@ In Android Studio:
 5. Wacht tot de emulator is opgestart en de applicatie is geladen
 
 === Werkwijze ===
+
 GitHub:
 
 Master branch: master
