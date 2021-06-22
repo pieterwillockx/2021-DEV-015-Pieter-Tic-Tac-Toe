@@ -2,12 +2,19 @@
 TicTacToe assignment for RMDY
 
 === Hoe compileren en uitvoeren ===
+
+In GitHub:
+1. Navigeer naar de master branch
+2. Klik op Code -> Download ZIP
+3. Unzip de file naar een opslaglocatie
+
 In Android Studio:
-1. Klik op File -> Open... -> vind de opslaglocatie van de broncode
+1. Klik op File -> Open... -> selecteer de unzipped folder -> OK
 2. Klik op de groene startknop in de tweede bovenbalk, of druk Shift+F10
 3. Android Studio zal voorstellen om een nieuwe emulator te instantieren, of een bestaande te gebruiken
 4. Klik op OK
 5. Wacht tot de emulator is opgestart en de applicatie is geladen
+
 
 === Werkwijze ===
 
