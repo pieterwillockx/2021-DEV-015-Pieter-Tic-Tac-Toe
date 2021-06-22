@@ -24,6 +24,27 @@ class MainActivity : Activity() {
 
         cells = Utils.getChildViewsByClass(tl_cell_table, TextView::class.java)
 
+        if (savedInstanceState != null) {
+            var cellValues : ArrayList<Int> = arrayListOf()
+            cellValues = savedInstanceState.getIntegerArrayList("cell_values") as ArrayList<Int>
+
+            // 0 -> "", 1 -> "X", 2 -> "O"
+            cells.forEachIndexed { index, it ->
+                when (cellValues[index]) {
+                    0 -> it.text = ""
+                    1 -> it.text = "X"
+                    2 -> it.text = "O"
+                }
+            }
+
+            playerTurn = savedInstanceState.getInt("player_turn")
+            xCounter = savedInstanceState.getInt("x_counter")
+            oCounter = savedInstanceState.getInt("o_counter")
+            xWins = savedInstanceState.getBoolean("x_wins")
+            oWins = savedInstanceState.getBoolean("o_wins")
+            draw = savedInstanceState.getBoolean("draw")
+        }
+
         setCurrentPlayer()
 
         cells.forEach { it.setOnClickListener {
@@ -63,6 +84,33 @@ class MainActivity : Activity() {
             setGameOverMessage()
             showPlayAgainButton(false)
         }
+    }
+
+    override fun onBackPressed() {
+        moveTaskToBack(true)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        val cellValues : ArrayList<Int> = arrayListOf()
+
+        // 0 -> "", 1 -> "X", 2 -> "O"
+        cells.forEach {
+            when (it.text) {
+                "" -> cellValues.add(0)
+                "X" -> cellValues.add(1)
+                "O" -> cellValues.add(2)
+            }
+        }
+
+        outState.putIntegerArrayList("cell_values", cellValues)
+        outState.putInt("player_turn", playerTurn)
+        outState.putInt("x_counter", xCounter)
+        outState.putInt("o_counter", oCounter)
+        outState.putBoolean("x_wins", xWins)
+        outState.putBoolean("o_wins", oWins)
+        outState.putBoolean("draw", draw)
     }
 
     private fun showPlayAgainButton(show : Boolean) {
