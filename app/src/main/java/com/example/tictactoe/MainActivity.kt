@@ -58,9 +58,7 @@ class MainActivity : Activity() {
         setCurrentPlayer()
 
         cells.forEach { it.setOnClickListener {
-            println("cell with name " + it.id + " was clicked!")
             if ((it as TextView).text != "" || xWins || oWins || draw) {
-                println("no action taken")
                 return@setOnClickListener
             }
 
