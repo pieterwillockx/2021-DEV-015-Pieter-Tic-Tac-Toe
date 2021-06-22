@@ -1,7 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#CACACA"
+    android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_current_player"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:paddingVertical="10dp"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:background="@drawable/border"
+            fontPath="fonts/poppins_regular.ttf"
+            tools:text="Player 1, make a move" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:id="@+id/tl_cell_table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TableRow
+                    android:id="@+id/row1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/cell1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/border"
+                        android:gravity="center"
+                        android:paddingHorizontal="30dp"
+                        android:paddingVertical="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="50sp"
+                        tools:text="O" />
+
+                    <TextView
+                        android:id="@+id/cell2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/border"
+                        android:gravity="center"
+                        android:paddingHorizontal="30dp"
+                        android:paddingVertical="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="50sp"
+                        tools:text="O" />
+
+                    <TextView
+                        android:id="@+id/cell3"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/border"
+                        android:gravity="center"
+                        android:paddingHorizontal="30dp"
+                        android:paddingVertical="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="50sp"
+                        tools:text="X" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/cell4"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/border"
+                        android:gravity="center"
+                        android:paddingHorizontal="30dp"
+                        android:paddingVertical="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="50sp"
+                        tools:text="X" />
+
+                    <TextView
+                        android:id="@+id/cell5"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/border"
+                        android:gravity="center"
+                        android:paddingHorizontal="30dp"
+                        android:paddingVertical="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="50sp"
+                        tools:text="O" />
+
+                    <TextView
+                        android:id="@+id/cell6"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/border"
+                        android:gravity="center"
+                        android:paddingHorizontal="30dp"
+                        android:paddingVertical="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="50sp"
+                        tools:text="O" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/cell7"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/border"
+                        android:gravity="center"
+                        android:paddingHorizontal="30dp"
+                        android:paddingVertical="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="50sp"
+                        tools:text="X" />
+
+                    <TextView
+                        android:id="@+id/cell8"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/border"
+                        android:gravity="center"
+                        android:paddingHorizontal="30dp"
+                        android:paddingVertical="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="50sp"
+                        tools:text="O" />
+
+                    <TextView
+                        android:id="@+id/cell9"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/border"
+                        android:gravity="center"
+                        android:paddingHorizontal="30dp"
+                        android:paddingVertical="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="50sp"
+                        tools:text="X" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/tv_game_over"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:lines="2"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                tools:text="GAME OVER" />
+
+            <Button
+                android:id="@+id/btn_play_again"
+                fontPath="fonts/poppins_regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="@string/play_again"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_x_counter"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:paddingVertical="10dp"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:textColor="#0000ff"
+                android:text="@string/player_x_counter_start"
+                fontPath="fonts/poppins_regular.ttf" />
+
+            <TextView
+                android:id="@+id/tv_o_counter"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:paddingVertical="10dp"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:textColor="#ff0000"
+                android:text="@string/player_o_counter_start"
+                fontPath="fonts/poppins_regular.ttf" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
