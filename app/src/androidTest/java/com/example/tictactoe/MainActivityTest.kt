@@ -6,12 +6,12 @@ import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.espresso.matcher.ViewMatchers.withText
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
 import org.hamcrest.CoreMatchers.anyOf
+import org.hamcrest.CoreMatchers.not
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -38,13 +38,13 @@ class MainActivityTest {
 
     @Test
     fun should_update_text_in_current_player_when_clicked() {
-        onView(withId(R.id.current_player))
+        onView(withId(R.id.tv_current_player))
             .check(matches(withText("Player X, make a move")))
 
         onView(withId(R.id.cell1))
             .perform(click())
 
-        onView(withId(R.id.current_player))
+        onView(withId(R.id.tv_current_player))
             .check(matches(withText("Player O, make a move")))
     }
 
@@ -52,7 +52,7 @@ class MainActivityTest {
     fun should_update_text_to_x_win_message_when_game_over() {
         setUpXWinState()
 
-        onView(withId(R.id.game_over_message))
+        onView(withId(R.id.tv_game_over))
             .check(matches(withText("GAME OVER\nPlayer X wins!")))
     }
 
@@ -60,7 +60,7 @@ class MainActivityTest {
     fun should_update_text_to_o_win_message_when_game_over() {
         setUpOWinState()
 
-        onView(withId(R.id.game_over_message))
+        onView(withId(R.id.tv_game_over))
             .check(matches(withText("GAME OVER\nPlayer O wins!")))
     }
 
@@ -68,8 +68,36 @@ class MainActivityTest {
     fun should_update_text_to_draw_message_when_game_over() {
         setUpDrawState()
 
-        onView(withId(R.id.game_over_message))
+        onView(withId(R.id.tv_game_over))
             .check(matches(withText("GAME OVER\nDraw!")))
+    }
+
+    @Test
+    fun should_show_play_again_when_game_over() {
+        setUpXWinState()
+
+        onView(withId(R.id.btn_play_again))
+            .check(matches(isDisplayed()))
+    }
+
+    @Test
+    fun should_reset_view_when_play_again_clicked() {
+        setUpXWinState()
+
+        onView(withId(R.id.btn_play_again))
+            .perform(click())
+
+        onView(withId(R.id.cell1))
+            .check(matches(withText("")))
+
+        onView(withId(R.id.tv_current_player))
+            .check(matches(withText("Player X, make a move")))
+
+        onView(withId(R.id.tv_game_over))
+            .check(matches(withText("")))
+
+        onView(withId(R.id.btn_play_again))
+            .check(matches(not(isDisplayed())))
     }
 
     private fun setUpXWinState() {

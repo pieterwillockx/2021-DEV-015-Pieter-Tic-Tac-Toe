@@ -25,27 +25,48 @@ class MainActivity : Activity() {
         setCurrentPlayer()
 
         cells.forEach { it.setOnClickListener {
-                println("cell with name " + it.id + " was clicked!")
-                if ((it as TextView).text != "") {
-                    println("cell with name " + it.id + " already has a value!")
-                    return@setOnClickListener
-                }
+            println("cell with name " + it.id + " was clicked!")
+            if ((it as TextView).text != "" || xWins || oWins || draw) {
+                println("no action taken")
+                return@setOnClickListener
+            }
 
-                if (playerTurn == 0) {
-                    (it as TextView).text = "X"
-                    playerTurn = 1
-                } else if (playerTurn == 1) {
-                    (it as TextView).text = "O"
-                    playerTurn = 0
-                }
+            if (playerTurn == 0) {
+                (it as TextView).text = "X"
+                playerTurn = 1
+            } else if (playerTurn == 1) {
+                (it as TextView).text = "O"
+                playerTurn = 0
+            }
 
-                if (checkIfGameOver()) {
-                    setGameOverMessage()
-                } else {
-                    setCurrentPlayer()
-                }
+            if (checkIfGameOver()) {
+                setGameOverMessage()
+                showPlayAgainButton(true)
+            } else {
+                setCurrentPlayer()
             }
         }
+        }
+
+        btn_play_again.setOnClickListener {
+            // reset variables, clear text in cells
+            cells.forEach { it.text="" }
+            tv_game_over.text = ""
+            playerTurn = 0
+            xWins = false
+            oWins = false
+            draw = false
+            setCurrentPlayer()
+            setGameOverMessage()
+            showPlayAgainButton(false)
+        }
+    }
+
+    private fun showPlayAgainButton(show : Boolean) {
+        if (show)
+            btn_play_again.visibility = View.VISIBLE
+        else
+            btn_play_again.visibility = View.INVISIBLE
     }
 
     private fun setCurrentPlayer() {
@@ -113,10 +134,7 @@ class MainActivity : Activity() {
             tv_game_over.text = "GAME OVER\nPlayer O wins!"
         else if (draw)
             tv_game_over.text = "GAME OVER\nDraw!"
-
-        //remove onClickListeners
-        cells.forEach {
-            it.setOnClickListener(null)
-        }
+        else
+            tv_game_over.text = ""
     }
 }
